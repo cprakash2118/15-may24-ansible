@@ -1,0 +1,58 @@
+    1  ls /var/lib/gdm/
+    2  sudo -i
+    3  moutn
+    4  mount
+    5  cat /opt/app-root/src/jupyter_lab_config.py 
+    6  less /opt/app-root/src/jupyter_lab_config.py
+    7  cat /cloud-init/instance-data.json 
+    8  cat /cloud-init/instance-data.json |less
+    9  exit
+   10  cat /cloud-init/instance-data.json |less
+   11  cat /cloud-init/instance-data.json |less
+   12  exit
+   13  mount /dev/sr0 /mnt
+   14  sudo mount /dev/sr0 /mnt
+   15  cat /mnt/openstack/latest/meta_data.json 
+   16  sudo -i
+   17  ssh workstation; exit
+   18  ssh workstation; exit
+   19  cd 
+   20  podman  ps
+   21  history 
+   22  cd work/
+   23  cat ansible-navigator.yaml 
+   24  python -v
+   25  python -version 
+   26  python --version 
+   27  ll
+   28  vim -O inventory ansible.cfg ansible-navigator.yaml 
+   29  ansible-navigator images
+   30  podman  images
+   31  podman rmi -af 
+   32  podman  images
+   33  ansible-navigator images
+   34  podman  images
+   35  ---
+   36  ansible-navigator:
+   37     execution-environment:
+   38  podman pull utility.lab.example.com/ee-supported-rhel8:latest
+   39  podman  images
+   40  ll
+   41  git clone https://github.com/cprakash2118/15-may24-ansible
+   42  ll
+   43  mkdir 15-may24-ansible/session-01 
+   44  cp -rpv ansible* inventory 15-may24-ansible/session-01/
+   45  ll
+   46  cd 15-may24-ansible/
+   47  git status 
+   48  git add .
+   49  git status 
+   50  git commit -m update
+   51  git push 
+   52  cd ..
+   53  ll
+   54  podman images
+   55  rm -rf 15-may24-ansible 
+   56  git clone https://github.com/cprakash2118/15-may24-ansible
+   57  ll
+   58  history > 15-may24-ansible/session-01/history.txt 

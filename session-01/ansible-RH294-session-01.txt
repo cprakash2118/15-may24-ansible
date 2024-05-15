@@ -1,0 +1,108 @@
+# Product  
+Red Hat ANsible Automation Platform - AAP 2.X
+https://www.ansible.com/
+https://docs.ansible.com/
+https://www.redhat.com/en/technologies/management/ansible?sc_cid=7015Y000003szaKQAQ
+
+Training references:-
+https://github.com/cprakash2118/cisco-ansible
+https://github.com/cprakash2118/15-may24-ansible 
+
+
+# What is Ansible ?
+- Open Source Automation Platform [Unix/Linux/wins/Network-Device in physical/Virtual/Container envs]
+
+# Ansible installation ? 
+# Ansible componets 
+https://www.ansible.com/ecosystem/
+  - ansible-core 
+  - ansible-navigator 
+  - ansible-builder 
+  - ansible-content-collection
+  - ansible-execution-env 
+
+# How ansible installation?
+  ansible-core 
+  ansible-navigatore 
+  ansible-controller 
+  
+  - Install ansible from EPEL
+    dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm -y
+	# dnf/yum install ansible-navigator* 
+	# dnf/yum install ansible-navigator*  ansible-core ansible-builder 
+	
+# RH Lab env or Prod env for ansible setup.
+
+ 1) Users Details:-
+   student/student - user2 
+   devops/redhat   - user1 
+   root/redhat 
+   
+   Example:-
+   user1/redhat [ssh password = no ; sudo password = no ]
+                FYI - Passwordless authentication & authorization 
+   user2/redhat [ssh password = no ; sudo password = yes ]
+                FYI - Passwordless authentication & with authorization.
+   user3/redhat [ssh password = yes ; sudo password = yes ] 
+                FYI - with password authentication & authorization.
+				
+ 2) VMs/Servers details:-
+    workstation.lab.example.com   [ Jump server / ansible install - controle node]
+	FYI - Window machine can not be a controle node.
+	
+	server[a:d].lab.example.com   [ Where playbook execute - managed host]
+	FYI - Manages host - Unix/Linux/win/Router & Switches
+
+    hub.lab.example.com [ Automation HUB]
+    FYI - [ Store execution env; collection ; roles ]
+
+
+
+####
+# yum install ansible-navigator* ansible-core -y 
+# rpm -qa | greo ansible 
+# yum info ansible-navigatore 
+
+$ ansible --version 
+$ mkdir work ; cd work 
+$ touch ansible.cfg inventory ansible-navigator.yaml 
+
+- ansible.cfg - Ansible Configuration file 
+- ansible-navigator.yaml - Define ansible execution env 
+- inventory - Details able all nodes
+
+# ansible control node [INstalled ansible]
+# ansible execution environment [ Where ansible playbook execute ]
+  FYI - Now all ansible playbooks execute on "ansible-execution-env" - which is a container env.
+  
+# ansible-navigator only having capabilities to seperate "ansible control node" and "ansible execution-env".
+
+
+### ansible.cfg file
+
+1) Env variable must be define and file "ansible.cfg" must be present at defined location.
+   $ env | grep ANSIBLE_CONFIG
+   $ export ANSIBLE_CONFIG=/path/to/ansible.cfg 
+   $ env | ANSIBLE_CONFIG
+   ANSIBLE_CONFIG=/path/to/ansible.cfg 
+   $ unset ANSIBLE_CONFIG
+   $ env | grep ANSIBLE_CONFIG
+   
+
+2) ansible.cfg file must be present at current working dir.
+
+   $ ansible-*
+   $ ls -l ansible.cfg 
+   
+3) ansible.cfg file must be at user's home dir - /home/user/.ansible.cfg 
+
+4) Default file - /etc/ansible/ansible.cfg 
+
+
+
+
+
+   
+   
+   
+   

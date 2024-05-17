@@ -1,0 +1,19 @@
+---
+- name: Group & User example - 1st playbook - 1st play.
+  hosts: prod 
+  tasks:
+    - name: 1st Task - Group Creation.
+      ansible.builtin.group:
+        name: unixadm 
+        gid: 3423
+        state: present 
+    
+    - name: 2nd Task - User Creation.
+      ansible.builtin.user:
+        name: user1 
+        group: unixadm 
+        uid: 12345
+        state: present 
+        #password: "{{ 'redhat123' | password_hash('sha512') }}"
+        password: "{{ 'redhat123' | password_hash('sha256') }}"
+...

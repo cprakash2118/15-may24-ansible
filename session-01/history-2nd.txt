@@ -1,0 +1,239 @@
+    1  ls /var/lib/gdm/
+    2  sudo -i
+    3  moutn
+    4  mount
+    5  cat /opt/app-root/src/jupyter_lab_config.py 
+    6  less /opt/app-root/src/jupyter_lab_config.py
+    7  cat /cloud-init/instance-data.json 
+    8  cat /cloud-init/instance-data.json |less
+    9  exit
+   10  cat /cloud-init/instance-data.json |less
+   11  cat /cloud-init/instance-data.json |less
+   12  exit
+   13  mount /dev/sr0 /mnt
+   14  sudo mount /dev/sr0 /mnt
+   15  cat /mnt/openstack/latest/meta_data.json 
+   16  sudo -i
+   17  ssh workstation; exit
+   18  ssh workstation; exit
+   19  sudo su - 
+   20  ansibe --version 
+   21  ansible --version 
+   22  rpm -q -f /etc/ansible/ansible.cfg
+   23  which ansibel
+   24  which ansible
+   25  rpm -q -f /bin/ansible
+   26  which ansible-navigator 
+   27  rpm -q -f `which ansible-navigator` 
+   28  mkdir work 
+   29  cd work/
+   30  pwd
+   31  ll
+   32  touch ansible.cfg inventory ansible-navigator.yaml 
+   33  file * 
+   34  ls -l
+   35  pwd
+   36  ansible --version 
+   37  mv ansible.cfg ansible.cfG
+   38  ansible --version 
+   39  ll
+   40  ansible --version 
+   41  touch ~/.ansible.cfg 
+   42  ansible --version 
+   43  mv ansible.cfG ansible.cfg
+   44  ansible --version 
+   45  pwd
+   46  env | grep ANSIBLE
+   47  export ANSIBLE_CONFIG=/var/tmp/ansible.cfg 
+   48  env | grep ANSIBLE
+   49  ansible --version 
+   50  ls -l /var/tmp/ansible.cfg
+   51  touch /var/tmp/ansible.cfg
+   52  ansible --version 
+   53  env| grep ANS
+   54  unset ANSIBLE_CONFIG
+   55  env| grep ANS
+   56  ansible --version 
+   57  ls -l ansible.cfg 
+   58  cat ansible.cfg 
+   59  mv ansible.cfg ansible.cf
+   60  ls -l ansible.cfg 
+   61  ansible --version 
+   62  mv /home/student/.ansible.cfg /home/student/ansible.cfg
+   63  ansible --version 
+   64  mkdir -p BookMyShow/{booking-app,payment-app,niti-app}
+   65  tree BookMyShow/
+   66  cd BookMyShow/booking-app/
+   67  pwd
+   68  ll
+   69  pwd
+   70  git clone https://github.com/cprakash2118/cisco-ansible
+   71  ll
+   72  tree cisco-ansible/
+   73  cd ..
+   74  ll
+   75  rm -rf BookMyShow 
+   76  ll
+   77  mv ansible.cf ansible.cfg
+   78  ll
+   79  ansible --version 
+   80  vim ansible.cfg 
+   81  vim inventory 
+   82  vim ansible.cfg 
+   83  cat /etc/ansible/ansible.cfg 
+   84  ansible-config init --disabled > ansible-example.cfg
+   85  cat ansible-example.cfg | grep "^\["
+   86  cat ansible-example.cfg | grep "^\[" > ansible.cfg 
+   87  vim ansible.cfg 
+   88  ll
+   89  mv ansible-example.cfg /tmp/
+   90  ll
+   91  vim ansible.cfg 
+   92  ansible all --list-hosts
+   93  ansible prod --list-hosts
+   94  ansible dev --list-hosts
+   95  ansible test --list-hosts
+   96  ansible ungrouped --list-hosts
+   97  vim inventory 
+   98  ansible all --list-hosts
+   99  vim inventory 
+  100  ansible ungrouped --list-hosts
+  101  ansible prod --list-hosts
+  102  ansible prod,dev --list-hosts
+  103  ansible all -m ping 
+  104  ping -c 2 servera.lab.example.com
+  105  ansible all -m shell -a "uptime" 
+  106  ansible all -m shell -a "id" 
+  107  ansible dev -m shell -a "id" 
+  108  vim ansible.cfg 
+  109  ansible dev -m shell -a "id" 
+  110  vim ansible.cfg 
+  111  whoami 
+  112  vim ansible.cfg 
+  113  ansible dev -m shell -a "id" 
+  114  vim ansible.cfg 
+  115  ansible dev -m shell -a "id" 
+  116  vim ansible.cfg 
+  117  ansible dev -m shell -a "id" 
+  118  vim ansible.cfg 
+  119  ansible dev -m shell -a "id" 
+  120  vim ansible.cfg 
+  121  ansible dev -m shell -a "id" 
+  122  ssh root@servera 
+  123  vim ansible.cfg 
+  124  ssh servera 
+  125  ssh serverb
+  126  for x in {a..d}; do ping -c 2 server$x; done
+  127  for x in {a..d}; do ssh  server$x uptime ; done
+  128  ll
+  129  vim ansible.cfg 
+  130  ansible all -m shell -a "uptime"
+  131  ll
+  132  ansible dev -m user -a "name=john state=present"
+  133  ansible dev -m shell -a "id john" 
+  134  ansible dev -m user -a "name=john state=absent"
+  135  ansible dev -m shell -a "id john" 
+  136  vim ansible-navigator.yaml 
+  137  podman images
+  138  podman rmi -af 
+  139  podman images
+  140  ansible-navigator images
+  141  podman login utility.lab.example.com
+  142  cat /run/user/1000/containers/auth.json 
+  143  ansible-navigator images
+  144  podman images
+  145  podman  ps
+  146  ansible-navigator doc -m stdout yum
+  147  cd 
+  148  podman  ps
+  149  history 
+  150  cd work/
+  151  cat ansible-navigator.yaml 
+  152  python -v
+  153  python -version 
+  154  python --version 
+  155  ll
+  156  vim -O inventory ansible.cfg ansible-navigator.yaml 
+  157  ansible-navigator images
+  158  podman  images
+  159  podman rmi -af 
+  160  podman  images
+  161  ansible-navigator images
+  162  podman  images
+  163  ---
+  164  ansible-navigator:
+  165     execution-environment:
+  166  podman pull utility.lab.example.com/ee-supported-rhel8:latest
+  167  podman  images
+  168  ll
+  169  git clone https://github.com/cprakash2118/15-may24-ansible
+  170  ll
+  171  mkdir 15-may24-ansible/session-01 
+  172  cp -rpv ansible* inventory 15-may24-ansible/session-01/
+  173  ll
+  174  cd 15-may24-ansible/
+  175  git status 
+  176  git add .
+  177  git status 
+  178  git commit -m update
+  179  git push 
+  180  cd ..
+  181  ll
+  182  podman images
+  183  rm -rf 15-may24-ansible 
+  184  git clone https://github.com/cprakash2118/15-may24-ansible
+  185  ll
+  186  history > 15-may24-ansible/session-01/history.txt 
+  187  ll
+  188  cat ansible.cfg 
+  189  at ansible-navigator.
+  190  at ansible-navigator.yaml 
+  191  cat ansible-navigator.yaml 
+  192  ansible-navigator images
+  193  cd  15-may24-ansible/
+  194  pwd
+  195  l
+  196  ll
+  197  git add .
+  198  git commit -m update
+  199  git push 
+  200  podman images
+  201  podman rmi -af 
+  202  podman images
+  203  ll
+  204  cd session-01/
+  205  pwd
+  206  podman  images
+  207  ansible-navigator image
+  208  ansible-navigator images
+  209  pwd
+  210  ll
+  211  cd work/
+  212  pwd
+  213  ll
+  214  cd 15-may24-ansible/
+  215  pwd
+  216  ll
+  217  cd session-01/
+  218  pwd
+  219  ll
+  220  vim -O ansible.cfg inventory ansible-navigator.yaml 
+  221  ll
+  222  ansible all -m ping 
+  223  ll
+  224  vim inventory 
+  225  ansible dev --list-hosts
+  226  ansible dev,prod --list-hosts
+  227  ansible dev,prod -m shell -a "uptime"
+  228  ll
+  229  podman  images
+  230  cd work/
+  231  pwd
+  232  ll
+  233  cd 15-may24-ansible/
+  234  pwd
+  235  l
+  236  ll
+  237  tree
+  238  history 
+  239  history > history-2nd.txt 

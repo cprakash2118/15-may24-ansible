@@ -1,0 +1,54 @@
+---
+- name: INstall & deploy apache web server.
+  hosts: prod,dev,test
+  tasks:
+   - name: Install the latest version of required packages.
+     ansible.builtin.yum:
+       name: 
+          - httpd
+          - firewalld 
+       state: latest 
+
+   - name: Start service httpd, if not started
+     ansible.builtin.service:
+       name: "{{ item }}"
+       state: started
+       enabled: true 
+     loop: 
+        - httpd
+        - firewalld 
+
+   - name: permit traffic in default zone for https service
+     vars:
+       - required_prots:
+          - http
+          - https
+     ansible.posix.firewalld:
+       service: "{{ item }}"
+       permanent: yes
+       immediate: true
+       state: enabled
+     loop: "{{ required_prots }}"
+
+   - name: Deploying application - index.html 
+     ansible.builtin.copy:
+       content: "This is my 1st web page !!! \n"
+       dest: /var/www/html/index.html 
+
+- name: Validation - play 2nd 
+  hosts: localhost
+  become: false 
+  vars:
+   - web_servers_list:
+       - servera
+       - serverb
+       - serverc
+       - serverd
+  tasks:
+    - name: Check that a page returns a status 200.
+      ansible.builtin.uri:
+         url: "http://{{item}}"
+         return_content: yes
+         status_code: 200
+      loop: "{{ web_servers_list }}"
+...
